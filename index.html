@@ -101,6 +101,23 @@
     .contact-info p {
       margin: 10px 0;
     }
+    /* Floating contact/chat widget */
+    .chat-widget {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      background-color: #5b2e91;
+      color: white;
+      border-radius: 50px;
+      padding: 12px 18px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+      cursor: pointer;
+      z-index: 999;
+      font-weight: 600;
+    }
+    .chat-widget i {
+      margin-right: 8px;
+    }
   </style>
 </head>
 <body>
@@ -180,6 +197,10 @@
   <footer>
     <p>&copy; 2025 Mukul Ranganath | Designed with 💜</p>
   </footer>
+
+  <!-- Floating Chat Widget -->
+  <div class="chat-widget" onclick="window.location.href='https://wa.me/919916838810'">
+    <i class="fas fa-comments"></i> Chat / Contact
+  </div>
 </body>
 </html>
-
