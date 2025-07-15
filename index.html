@@ -41,18 +41,22 @@
       border-radius: 50%;
       margin-bottom: 20px;
       border: 4px solid white;
+      animation: fadeIn 2s ease-in-out;
     }
     header h1 {
       margin: 0;
       font-size: 2.5em;
+      animation: slideDown 1.5s ease-in-out;
     }
     header p {
       margin: 10px 0 20px;
       font-size: 1.2em;
+      animation: fadeIn 2s ease-in-out 1s backwards;
     }
     nav {
       text-align: center;
       margin-top: 20px;
+      animation: fadeIn 2s ease-in-out 1.5s backwards;
     }
     nav a {
       margin: 0 15px;
@@ -64,6 +68,7 @@
       padding: 60px 20px;
       max-width: 900px;
       margin: auto;
+      animation: fadeIn 1s ease-in-out;
     }
     h2 {
       color: #5b2e91;
@@ -84,6 +89,7 @@
       border-radius: 5px;
       margin-top: 20px;
       font-weight: 600;
+      animation: popUp 0.8s ease-in-out 2s backwards;
     }
     .button i {
       margin-right: 8px;
@@ -101,7 +107,6 @@
     .contact-info p {
       margin: 10px 0;
     }
-    /* Floating contact/chat widget */
     .chat-widget {
       position: fixed;
       bottom: 20px;
@@ -114,16 +119,79 @@
       cursor: pointer;
       z-index: 999;
       font-weight: 600;
+      animation: bounce 2s infinite;
     }
     .chat-widget i {
       margin-right: 8px;
     }
-  </style>
+    /* Animations */
+    @keyframes fadeIn {
+      0% { opacity: 0; transform: translateY(20px); }
+      100% { opacity: 1; transform: translateY(0); }
+    }
+    @keyframes slideDown {
+      0% { opacity: 0; transform: translateY(-30px); }
+      100% { opacity: 1; transform: translateY(0); }
+    }
+    @keyframes popUp {
+      0% { opacity: 0; transform: scale(0.8); }
+      100% { opacity: 1; transform: scale(1); }
+    }
+    @keyframes bounce {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-5px); }
+    }
+      .typing-animation::after {
+      content: '|';
+      animation: typing 5s steps(40, end) infinite, blink 0.75s step-end infinite;
+      white-space: nowrap;
+      overflow: hidden;
+      display: inline-block;
+      border-right: 2px solid white;
+    }
+    @keyframes typing {
+      0% { content: 'M'; }
+      10% { content: 'Mu'; }
+      20% { content: 'Muk'; }
+      30% { content: 'Muku'; }
+      40% { content: 'Mukul'; }
+      50% { content: 'Mukul R'; }
+      60% { content: 'Mukul Ra'; }
+      70% { content: 'Mukul Ran'; }
+      80% { content: 'Mukul Rang'; }
+      90% { content: 'Mukul Ranga'; }
+      100% { content: 'Mukul Ranganath'; }
+    }
+    @keyframes blink {
+      0%, 100% { border-color: transparent; }
+      50% { border-color: white; }
+    }
+    #testimonial-slider {
+      background: #fff;
+      border-left: 5px solid #5b2e91;
+      padding: 20px;
+      margin-top: 20px;
+      font-style: italic;
+      animation: slideTestimonial 12s infinite;
+      height: 60px;
+    }
+    .testimonial {
+      display: none;
+    }
+    .testimonial.active {
+      display: block;
+    }
+    @keyframes slideTestimonial {
+      0%   { content: '“Mukul is a growth champion – his customer-first mindset drives impact.”'; }
+      33%  { content: '“A great blend of operations, partnerships, and creative thinking.”'; }
+      66%  { content: '“His automation hacks saved our team 15+ hours/week.”'; }
+      100% { content: '“Mukul is a growth champion – his customer-first mindset drives impact.”'; }
+    }
 </head>
 <body>
   <header>
     <img src="https://avatars.githubusercontent.com/u/9916838810?v=4" alt="Mukul Ranganath Profile Photo" />
-    <h1>Mukul Ranganath</h1>
+    <h1 class="typing-animation"></h1>
     <p>🚀 Growth Enabler | 🤖 CS Ops Strategist | 🌾 SaaS & Agritech Specialist</p>
     <nav>
       <a href="#about">About</a>
@@ -135,72 +203,56 @@
     <a class="button" href="/resume/Mukul-Ranganath-Resume.pdf" download><i class="fas fa-file-download"></i>Download Resume</a>
   </header>
 
-  <section id="about">
-    <h2><i class="fas fa-user icon"></i>About Me</h2>
-    <p>With over a decade of experience across SaaS, Agritech, and Hospitality, I help businesses scale post-sale growth through data, automation, and strategic partnerships. I’m passionate about the intersection of AI, customer success, and revenue operations.</p>
-  </section>
-
-  <section id="experience" class="experience">
-    <h2><i class="fas fa-briefcase icon"></i>Experience</h2>
-    <h3>Pepwerk – Head, Account Manager (FreeLancer) </h3>
-    <ul>
-      <li>Led partnerships across agritech and rural outreach platforms</li>
-      <li>Drove ad revenue and influencer campaigns for rural audiences</li>
-    </ul>
-    <h3>Plantix – Head, Account Manager </h3>
-    <ul>
-      <li>38% YoY growth with clients like Mahindra, Tafe, Skoda</li>
-      <li>Led cross-platform strategy and regional influencer execution</li>
-    </ul>
-    <h3>Krishify – Sr. Business Account Manager</h3>
-    <ul>
-      <li>Delivered 3.5x ROAS, >90% retention, 45% of annual platform ad revenue</li>
-    </ul>
-    <h3>Axisrooms & Reznext – Enterprise Account Management</h3>
-    <ul>
-      <li>Built SOPs, reduced churn by 28%, mentored new AMs</li>
-    </ul>
-    <h3>IBM – Senior Practitioner</h3>
-    <ul>
-      <li>Managed top-level support escalation and customer satisfaction</li>
-    </ul>
-  </section>
-
-  <section id="skills">
-    <h2><i class="fas fa-tools icon"></i>Skills & Tools</h2>
-    <ul>
-      <li>Customer Success | Revenue Ops | Campaign Strategy</li>
-      <li>Tools: HubSpot, N8N, Zapier, ChatGPT, Google Sheets, Clay.com, Notion</li>
-      <li>Languages: English, Hindi, Kannada, Telugu, Tamil</li>
-    </ul>
-  </section>
-
-  <section id="projects" class="project">
-    <h2><i class="fas fa-lightbulb icon"></i>Project Highlights</h2>
-    <h3>Mahindra & Tafe Tractors</h3>
-    <p>Delivered market insights and improved rural campaign efficiency by 33%</p>
-    <h3>Reznext Pricing Optimization</h3>
-    <p>Designed dynamic pricing strategy based on customer behavior and overbooking patterns</p>
-    <h3>Plantix Influencer Campaigns</h3>
-    <p>Onboarded regional influencers and increased content engagement by 40%+</p>
-  </section>
-
-  <section id="contact">
-    <h2><i class="fas fa-envelope icon"></i>Contact Me</h2>
-    <div class="contact-info">
-      <p><i class="fas fa-envelope icon"></i>Email: <a href="mailto:mukulranganath@gmail.com">mukulranganath@gmail.com</a></p>
-      <p><i class="fas fa-phone icon"></i>Phone: +91 9916838810</p>
-      <p><i class="fab fa-linkedin icon"></i><a href="https://www.linkedin.com/in/mukul-ranganath-098aab100/" target="_blank">Connect on LinkedIn</a></p>
+  <section id="testimonials">
+    <h2><i class="fas fa-comment icon"></i>Testimonials</h2>
+    <div id="testimonial-slider">
+      <div class="testimonial">“Mukul is a growth champion – his customer-first mindset drives impact.”</div>
+      <div class="testimonial">“A great blend of operations, partnerships, and creative thinking.”</div>
+      <div class="testimonial">“His automation hacks saved our team 15+ hours/week.”</div>
     </div>
   </section>
+  <script>
+    // Typing animation
+    const titles = [
+      "Mukul Ranganath",
+      "Growth Enabler",
+      "CS Ops Strategist"
+    ];
+    let i = 0;
+    let j = 0;
+    let currentTitle = '';
+    let isDeleting = false;
+    const speed = 150;
+    const typingElement = document.querySelector('.typing-animation');
 
-  <footer>
-    <p>&copy; 2025 Mukul Ranganath | Designed with 💜</p>
-  </footer>
+    function type() {
+      if (i < titles.length) {
+        if (!isDeleting && j <= titles[i].length) {
+          currentTitle = titles[i].substring(0, j++);
+        } else if (isDeleting && j >= 0) {
+          currentTitle = titles[i].substring(0, j--);
+        }
+        typingElement.textContent = currentTitle;
+        if (j === titles[i].length) isDeleting = true;
+        if (isDeleting && j === 0) {
+          isDeleting = false;
+          i = (i + 1) % titles.length;
+        }
+        setTimeout(type, speed);
+      }
+    }
+    document.addEventListener('DOMContentLoaded', () => type());
 
-  <!-- Floating Chat Widget -->
-  <div class="chat-widget" onclick="window.location.href='https://wa.me/919916838810'">
-    <i class="fas fa-comments"></i> Chat / Contact
-  </div>
+    // Testimonial slider
+    const testimonials = document.querySelectorAll('.testimonial');
+    let current = 0;
+    function showTestimonial() {
+      testimonials.forEach((t, idx) => t.classList.remove('active'));
+      testimonials[current].classList.add('active');
+      current = (current + 1) % testimonials.length;
+    }
+    setInterval(showTestimonial, 4000);
+    showTestimonial();
+  </script>
 </body>
 </html>
