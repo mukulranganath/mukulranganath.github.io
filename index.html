@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -141,120 +142,9 @@
       0%, 100% { transform: translateY(0); }
       50% { transform: translateY(-5px); }
     }
-      .typing-animation::after {
-      content: '|';
-      animation: typing 5s steps(40, end) infinite, blink 0.75s step-end infinite;
-      white-space: nowrap;
-      overflow: hidden;
-      display: inline-block;
-      border-right: 2px solid white;
-    }
-    @keyframes typing {
-      0% { content: 'M'; }
-      10% { content: 'Mu'; }
-      20% { content: 'Muk'; }
-      30% { content: 'Muku'; }
-      40% { content: 'Mukul'; }
-      50% { content: 'Mukul R'; }
-      60% { content: 'Mukul Ra'; }
-      70% { content: 'Mukul Ran'; }
-      80% { content: 'Mukul Rang'; }
-      90% { content: 'Mukul Ranga'; }
-      100% { content: 'Mukul Ranganath'; }
-    }
-    @keyframes blink {
-      0%, 100% { border-color: transparent; }
-      50% { border-color: white; }
-    }
-    #testimonial-slider {
-      background: #fff;
-      border-left: 5px solid #5b2e91;
-      padding: 20px;
-      margin-top: 20px;
-      font-style: italic;
-      animation: slideTestimonial 12s infinite;
-      height: 60px;
-    }
-    .testimonial {
-      display: none;
-    }
-    .testimonial.active {
-      display: block;
-    }
-    @keyframes slideTestimonial {
-  0%   { content: '“Mukul is a growth champion – his customer-first mindset drives impact.”'; }
-  33%  { content: '“A great blend of operations, partnerships, and creative thinking.”'; }
-  66%  { content: '“His automation hacks saved our team 15+ hours/week.”'; }
-  100% { content: '“Mukul is a growth champion – his customer-first mindset drives impact.”'; }
-}
-</style>
+  </style>
 </head>
-
 <body>
-  <header>
-    <img src="https://avatars.githubusercontent.com/u/9916838810?v=4" alt="Mukul Ranganath Profile Photo" />
-    <h1 class="typing-animation"></h1>
-    <p>🚀 Growth Enabler | 🤖 CS Ops Strategist | 🌾 SaaS & Agritech Specialist</p>
-    <nav>
-      <a href="#about">About</a>
-      <a href="#experience">Experience</a>
-      <a href="#skills">Skills</a>
-      <a href="#projects">Projects</a>
-      <a href="#contact">Contact</a>
-    </nav>
-    <a class="button" href="/resume/Mukul-Ranganath-Resume.pdf" download><i class="fas fa-file-download"></i>Download Resume</a>
-  </header>
-
-  <section id="testimonials">
-    <h2><i class="fas fa-comment icon"></i>Testimonials</h2>
-    <div id="testimonial-slider">
-      <div class="testimonial"><img src="https://img.icons8.com/color/48/000000/manager--v1.png" alt="Person 1" style="width:40px; vertical-align:middle; margin-right:10px;"/> “Mukul is a growth champion – his customer-first mindset drives impact.”</div>
-      <div class="testimonial"><img src="https://img.icons8.com/color/48/000000/teamwork.png" alt="Person 2" style="width:40px; vertical-align:middle; margin-right:10px;"/> “A great blend of operations, partnerships, and creative thinking.”</div>
-      <div class="testimonial"><img src="https://img.icons8.com/color/48/000000/automation.png" alt="Person 3" style="width:40px; vertical-align:middle; margin-right:10px;"/> “His automation hacks saved our team 15+ hours/week.”</div>
-    </div>
-  </section>
-  <script>
-    // Typing animation
-    const titles = [
-      "Mukul Ranganath",
-      "Growth Enabler",
-      "CS Ops Strategist"
-    ];
-    let i = 0;
-    let j = 0;
-    let currentTitle = '';
-    let isDeleting = false;
-    const speed = 150;
-    const typingElement = document.querySelector('.typing-animation');
-
-    function type() {
-      if (i < titles.length) {
-        if (!isDeleting && j <= titles[i].length) {
-          currentTitle = titles[i].substring(0, j++);
-        } else if (isDeleting && j >= 0) {
-          currentTitle = titles[i].substring(0, j--);
-        }
-        typingElement.textContent = currentTitle;
-        if (j === titles[i].length) isDeleting = true;
-        if (isDeleting && j === 0) {
-          isDeleting = false;
-          i = (i + 1) % titles.length;
-        }
-        setTimeout(type, speed);
-      }
-    }
-    document.addEventListener('DOMContentLoaded', () => type());
-
-    // Testimonial slider
-    const testimonials = document.querySelectorAll('.testimonial');
-    let current = 0;
-    function showTestimonial() {
-      testimonials.forEach((t, idx) => t.classList.remove('active'));
-      testimonials[current].classList.add('active');
-      current = (current + 1) % testimonials.length;
-    }
-    setInterval(showTestimonial, 4000);
-    showTestimonial();
-  </script>
+  <h1>Hello World</h1>
 </body>
 </html>
